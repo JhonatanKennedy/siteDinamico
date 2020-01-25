@@ -7,7 +7,7 @@
     <body>
         <header id="header">
             <div id="logo">
-                <a href="#inicio">
+                <a href="main.html">
                     <img src="img/logo.png" alt="logo"/>
                 </a>
             </div>
@@ -30,11 +30,25 @@
             </nav>
         </header>
 
-
-
-
         <div id = "vid">
-
+            <video muted loop autoplay id="video">
+                <source src = "img/videoSignUp.webm" type="video/webm"></souce>
+            </video>
+        
+        
+        <div id = register>
+            <div id = "box-register">
+                <img src="img/SignUpLogo.png" id = "SignUpLogo"/>
+                <br>    
+                Type our Login:<br>
+                <input type="text" name="login" placeholder="Your login" id="login"><br>
+                Type your password:<br>
+                <input type="text" name="pass" placeholder="Your password" id="pass"><br>
+                Re-type our password:<br>
+                <input type="text" name="confirmPass" placeholder="Your password"  id="confirmPass"><br><br>
+                <input type="checkbox" id = "nao serve pra nada aqui"><text>I agree with the terms</text>
+                <br><br><text id = "signUpButton">Sign up</text>
+            </div>
         </div>
 
 
