@@ -1,22 +1,38 @@
 <!DOCTYPE html>
 <html>
+    
+    <style>
+        html{
+            position: fixed;
+        }
+        #header1{
+            display: flex;
+            height: 60px;
+            background-color: rgb(46, 45, 45);
+            border-bottom: solid 3px rgb(41, 49, 128);
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            z-index: 100%;
+        }
+    </style>
     <title>League Store</title>
     <head>
         <link href="style.css" rel="stylesheet">
     </head>
     <body>
-        <header id="header">
+        <header id="header1">
             <div id="logo">
                 <a href="main.html">
                     <img src="img/logo.png" alt="logo"/>
                 </a>
             </div>
             <nav id = "menu">
-                <div class = "menu-button"><a href="#noxus">Noxus</a></div>
-                <div class = "menu-button"><a href="#demacia">Demacia</a></div>
-                <div class = "menu-button"><a href="#ionia">Ionia</a></div>
-                <div class = "menu-button"><a href="#shurima">Shurima</a></div>
-                <div class="menu-button"><a href="#void">Void</a></div>
+                <div class = "menu-button"><a href="../main.html#noxus">Noxus</a></div>
+                <div class = "menu-button"><a href="../main.html#demacia">Demacia</a></div>
+                <div class = "menu-button"><a href="../main.html#ionia">Ionia</a></div>
+                <div class = "menu-button"><a href="../main.html#shurima">Shurima</a></div>
+                <div class="menu-button"><a href="../main.html#void">Void</a></div>
             </nav>
 
             <nav id = "left-box">
@@ -50,8 +66,18 @@
                 <br><br><text id = "signUpButton">Sign up</text>
             </div>
         </div>
+        <script>
 
-
+            window.onhashchange = function(e) {
+            const oldURL = e.oldURL.split('#')[1]
+            const newURL = e.newURL.split('#')[1]
+            console.log(oldURL, newURL)
+            const oldLink = document.querySelector(`.menu-button a[href='#${oldURL}']`)
+            const newLink = document.querySelector(`.menu-button a[href='#${newURL}']`)
+            oldLink && oldLink.classList.remove('selected')
+            newLink && newLink.classList.add('selected')
+        }
+        </script>
     </body>
 
 
