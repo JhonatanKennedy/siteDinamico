@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+    <style>
+        html{
+            scroll-behavior: smooth;
+            }
+    </style>
+    <title>League Store</title>
+    <head>
+        <link href="style.css" rel="stylesheet">
+    </head>
+    <body>
+        <header id="header">
+            <div id="logo">
+                <a href="#fade">
+                    <img src="img/logo.png" alt="logo"/>
+                </a>
+            </div>
+
+            <nav id = "left-box">
+                <div id="login-button"><a href="login.html">Login</a></div>
+
+                    <div id = "cart">
+                        <a href="cart.html">
+                            <img src ="img/cart.png" alt="cart">
+                     </a>
+                    </div>
+            </nav>
+        </header>
+
+        <div id = "products">
+            
+
+        </div>
+
+
+
+
+        <script>
+            window.onhashchange = function(e) {
+                const oldURL = e.oldURL.split('#')[1]
+                const newURL = e.newURL.split('#')[1]
+                console.log(oldURL, newURL)
+                const oldLink = document.querySelector(`.menu-button a[href='#${oldURL}']`)
+                const newLink = document.querySelector(`.menu-button a[href='#${newURL}']`)
+                oldLink && oldLink.classList.remove('selected')
+                newLink && newLink.classList.add('selected')
+            }
+
+            let logged = window.location.search.substring(1).split(':')
+                if(logged[0] == "logged=true"){
+                    document.getElementById("login-button").style.display = "none"
+                }
+                var i=logged.length
+                var riven = logged.indexOf("riven")
+                var rengar = logged.indexOf("rengar")
+                var irelia = logged.indexOf("irelia")
+                var vayne = logged.indexOf("vayne")
+                var kha = logged.indexOf("kha")
+                if(riven != -1){
+                    console.log("riven"+riven)
+                }
+                if(irelia != -1){
+                    console.log("irelia"+irelia)
+                }
+                if(kha!= -1){
+                    console.log("kha"+kha)
+                }
+                if(rengar != -1){
+                    console.log("rengar"+rengar)
+                }
+                if(vayne!= -1){
+                    console.log("vayne"+vayne)
+                }
+
+
+        </script>
+
+    </body>
+
+
+</html>

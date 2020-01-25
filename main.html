@@ -28,7 +28,7 @@
                 <div id="login-button"><a href="login.html">Login</a></div>
 
                     <div id = "cart">
-                        <a href="cart.html">
+                        <a href="javascript:cart()">
                             <img src ="img/cart.png" alt="cart">
                      </a>
                     </div>
@@ -57,9 +57,9 @@
                 Mas a única resposta que ela recebeu foi uma flecha em chamas, disparada do topo da colina. Foi então que Riven entendeu que não se tratava mais de uma guerra para expandir os limites de Noxus. O objetivo era o extermínio total do inimigo - e a qualquer custo.
             </div>
             <br><br>
+            <h3>Log in to buy</h3>
             <div class = "buttonsBuy">
-            <div class="addCart" id="addRivenToCart">Add to cart</div>
-            <div class="buy" id="buyRiven">Buy</div>
+            <div class="addCart"><a href="javascript:riven()">Add to cart</a></div>
             </div>
         </section>
         <section id = "demacia">
@@ -75,9 +75,9 @@
                 Era um sorriso que viria a encher as veias de Shauna de ódio pelo resto dos seus dias.
                 </div>
                 <br><br>
+                <h3>Log in to buy</h3>
                 <div class = "buttonsBuy">
-                    <div class="addCart" id="addVayneToCart">Add to cart</div>
-                    <div class="buy" id="buyVayne">Buy</div>
+                    <div class="addCart"><a href="javascript:vayne()">Add to cart</a></div>
                 </div>
         </section>
         <section id = "ionia">
@@ -93,9 +93,9 @@
                 Nas silenciosas florestas para além de seu lar, Irelia chorou por sua família e começou a lembrar dos ensinamentos de sua avó. Ela percebeu que as técnicas que aprendera eram mais do que meras danças: eram uma expressão poderosa de algo muito maior.
             </div>
             <br><br>
+            <h3>Log in to buy</h3>
             <div class="buttonsBuy">
-                <div class="addCart" id="addIreliaToCart">Add to cart</div>
-                <div class="buy" id="buyIrelia">Buy</div>
+                <div class="addCart"><a href="javascript:irelia()">Add to cart</a></div>
             </div>
         </section>
         <section id="shurima">
@@ -115,9 +115,9 @@
                 Rengar interrompeu o pai e o chamou de covarde. Muitos Kiilash desfrutavam de corpos fortes e lares confortáveis. Mas, Rengar, ao contrário, já havia nascido enfrentando a morte. Ele havia aprendido sozinho a caçar e tinha troféus e cicatrizes para provar. Até sua cavidade ocular manchada de sangue era um troféu — prova de que, embora Rengar tivesse nascido com desvantagens, ele nunca desistiu.
             </div>
             <br><br>
+            <h3>Log in to buy</h3>
             <div class = "buttonsBuy">
-                <div class="addCart" id="addRengarToCart">Add to cart</div>
-                <div class="buy" id="buyRengar">Buy</div>
+                <div class="addCart"><a href="javascript:rengar()">Add to cart</a></div>
             </div>
         </section>
         <section id="void"> 
@@ -127,21 +127,12 @@
             <div class="history">Kha'Zix, um predador perverso do Vazio, se infiltrou em Valoran para devorar as criaturas mais promissoras desta terra. A cada abate, ele devora a força de sua presa e se torna mais poderoso. Rengar, a única criatura a qual ele considera seu equivalente, é o que ele mais deseja conquistar e consumir.
                 Quando Kha'Zix cruzou a fronteira para este mundo, ele estava frágil e faminto. Os animais que ele encontrou no início eram pequenos demais para abastecer a evolução rápida que ele almejava. Kha'Zix concentrou sua fome nas criaturas mais perigosas que ele pôde encontrar, arriscando a própria vida para satisfazer sua necessidade. Com cada um dos abates ele se deliciou e mudou, tornando-se um predador mais rápido e forte. Em pouco tempo ele passou a caçar suas presas com agressão sem limites, acreditando ser irrefreável. Certo dia, enquanto saboreava uma presa recém-abatida, o predador se tornou a caça. O borrão de um bote com presas e metais o levou ao chão, rugindo em sua face enquanto golpeava e rasgava sua pele. Foi quando Kha'Zix sentiu seu sangue ser derramado pela primeira vez. Com um grito agudo de fúria, ele cravou suas garras no olho de seu atacante, jogando-o para trás. E assim lutaram do nascer ao por do sol. Ao fim, muito próximos da morte, eles relutantemente se separaram. Enquanto suas feridas se fechavam, Kha'Zix queimava de ansiedade com a ideia de devorar aquele cuja força se equiparava com a do Vazio. Ele continuou sua busca por presas poderosas e vigor renovado. Quando o dia certo chegar, Kha'Zix fará de Rengar o seu banquete.</div>
            <br><br>
+           <h3>Log in to buy</h3>
             <div class = "buttonsBuy">
-                <div class="addCart" id="addKhaToCart">Add to cart</div>
-                <div class="buy" id="buyKha">Buy</div>
+                <div class="addCart"><a href="javascript:kha()">Add to cart</a></div>
+
             </div>
         </section>
-
-
-
-
-
-
-
-
-
-
 
 
         <script>
@@ -160,6 +151,7 @@
                     document.getElementById("login-button").style.display = "none"
                     document.querySelector("#box-fade h1").style.display = "none"
                     document.querySelector("#box-fade a").style.display = "none"
+
                     let novaDiv = document.createElement("div") 
 
                     let welcomeText = document.createTextNode("welcome " + logged[1])
@@ -168,8 +160,34 @@
                     let getContainer = document.getElementById("box-fade")
                     getContainer.appendChild(novaDiv)
                 }else{
+                   var hidden =  document.querySelectorAll(".buttonsBuy")
+                   hidden[0].style.display = "none"
+                   hidden[1].style.display = "none"
+                   hidden[2].style.display = "none"
+                   hidden[3].style.display = "none"
+                   hidden[4].style.display = "none"
 
                 }
+
+            function kha(val){
+                window.location = window.location.search + ":kha"
+            }
+            function rengar(){
+                window.location = window.location.search + ":rengar"
+            }
+            function irelia(){
+                window.location = window.location.search + ":irelia"
+            }
+            function vayne(){
+                window.location = window.location.search + ":vayne"
+            }  
+            function riven(){
+                window.location = window.location.search + ":riven"
+            }
+
+            function cart(){
+                window.location = "cart.html"+window.location.search
+            }
         </script>
 
     </body>

@@ -184,8 +184,7 @@ h2{
 }
 
 .buttonsBuy{
-    display: flex;
-    justify-content: space-between;
+    display: visible;
     width: 150px;
     margin-left: 85%;
 }
@@ -195,18 +194,23 @@ h2{
     border-radius: 5px;
     color: #AADCDD;
 }
-.buy{
-    border: solid 2px #00557F;
-    border-radius: 5px;
-    color: #AADCDD;
+.addCart a{
+    text-decoration: none;
+    color: #FCCE58;
 }
-.addCart:hover,.buy:hover{
+.addCart:hover{
     background-color:#00557F ;
 }
 #LoginButton a{
     text-decoration: none;
     color: white
 }
+
+#products{
+    background-image: ;
+}
+
+
 
 
 @keyframes slide{
