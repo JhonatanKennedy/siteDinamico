@@ -36,8 +36,8 @@
             </nav>
 
             <nav id = "left-box">
+                <div id="space"></div>
                 <div id="login-button"><a href="login.html">Login</a></div>
-
                     <div id = "cart">
                         <a href="cart.html">
                             <img src ="img/cart.png" alt="cart">
@@ -48,7 +48,7 @@
 
         <div id = "vid">
             <video muted loop autoplay id="video">
-                <source src = "img/videoSignUp.webm" type="video/webm"></souce>
+                <source src = "img/videoLogin.webm" type="video/webm"></souce>
             </video>
         
         
@@ -60,13 +60,35 @@
                 <input type="text" name="login" placeholder="Your login" id="login"><br>
                 Type your password:<br>
                 <input type="text" name="pass" placeholder="Your password" id="pass"><br>
-                Re-type our password:<br>
-                <input type="text" name="confirmPass" placeholder="Your password"  id="confirmPass"><br><br>
-                <input type="checkbox" id = "nao serve pra nada aqui"><text>I agree with the terms</text>
-                <br><br><text class = "signUpButton">Sign up</text>
+                <br><br>
+                <text class = "signUpButton" id = "LoginButton"><a href="javascript:loga()">Login </a></text>
             </div>
         </div>
         <script>
+            var logged= function(val){
+                window.location = "main.html?logged=" + val
+            }
+            function loga (){
+                let name = document.getElementById("login").value
+                let password = document.getElementById("pass").value
+
+                if(name == "admin" && password == "admin"){
+                    alert("login successed")
+
+                    document.getElementById("login-button").style.display = "none"
+                    let novaDiv = document.createElement("div") 
+
+                    let welcomeText = document.createTextNode("welcome " + name)
+                    novaDiv.appendChild(welcomeText)
+
+                    let getContainer = document.getElementById("space")
+                    getContainer.appendChild(novaDiv)
+                    logged("true:admin")
+
+                }else{
+                    alert("login invalid or missing argments")  
+                }
+            }
         </script>
     </body>
 

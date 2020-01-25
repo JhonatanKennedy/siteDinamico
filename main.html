@@ -25,7 +25,7 @@
             </nav>
 
             <nav id = "left-box">
-                <div id="login-button">Login</div>
+                <div id="login-button"><a href="login.html">Login</a></div>
 
                     <div id = "cart">
                         <a href="cart.html">
@@ -146,14 +146,30 @@
 
         <script>
             window.onhashchange = function(e) {
-            const oldURL = e.oldURL.split('#')[1]
-            const newURL = e.newURL.split('#')[1]
-            console.log(oldURL, newURL)
-            const oldLink = document.querySelector(`.menu-button a[href='#${oldURL}']`)
-            const newLink = document.querySelector(`.menu-button a[href='#${newURL}']`)
-            oldLink && oldLink.classList.remove('selected')
-            newLink && newLink.classList.add('selected')
-        }
+                const oldURL = e.oldURL.split('#')[1]
+                const newURL = e.newURL.split('#')[1]
+                console.log(oldURL, newURL)
+                const oldLink = document.querySelector(`.menu-button a[href='#${oldURL}']`)
+                const newLink = document.querySelector(`.menu-button a[href='#${newURL}']`)
+                oldLink && oldLink.classList.remove('selected')
+                newLink && newLink.classList.add('selected')
+            }
+
+            let logged = window.location.search.substring(1).split(':')
+                if(logged[0] == "logged=true"){
+                    document.getElementById("login-button").style.display = "none"
+                    document.querySelector("#box-fade h1").style.display = "none"
+                    document.querySelector("#box-fade a").style.display = "none"
+                    let novaDiv = document.createElement("div") 
+
+                    let welcomeText = document.createTextNode("welcome " + logged[1])
+                    novaDiv.appendChild(welcomeText)    
+
+                    let getContainer = document.getElementById("box-fade")
+                    getContainer.appendChild(novaDiv)
+                }else{
+
+                }
         </script>
 
     </body>

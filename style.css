@@ -131,7 +131,7 @@ section{
     margin-top: -35px;
     border: 0;
 }
-#signUpButton{
+.signUpButton{
     color:white;
     border: solid 4px;
     border-radius: 31px;
@@ -202,6 +202,10 @@ h2{
 }
 .addCart:hover,.buy:hover{
     background-color:#00557F ;
+}
+#LoginButton a{
+    text-decoration: none;
+    color: white
 }
 
 
