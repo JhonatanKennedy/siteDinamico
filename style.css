@@ -31,6 +31,7 @@ section{
     display: flex;
     width: 60px;
     height: 60px;
+    border:0;
 }
 #menu{
     display: flex;
@@ -59,6 +60,7 @@ section{
 #left-box img{             
     width: 50px;
     height: 50px;
+    border:0px;
 }
 #login-button{
     font-size: 25px;
@@ -122,12 +124,12 @@ section{
     background-image: url("img/backgroundRegister.jpg");
     display: flex;
     justify-content: center;
-    border: solid 4px;
     border-radius: 31px;
 }
 
 #SignUpLogo{
     margin-top: -35px;
+    border: 0;
 }
 #signUpButton{
     color:white;
@@ -136,13 +138,71 @@ section{
     border-color: black;
     background-color: black;
 }
-#demacia{
-    height: 100%;
-    background: white;
+#noxus,#demacia,#ionia,#shurima,#void{
+    color: white;
+    background:#000814;
     display: inline-block;
     width: 100%;
+    height: 900px;
+    border: solid 5px rgb(26, 15, 87);  
+}
+#noxus,#void,#demacia,#ionia,#shurima, h1{
+    text-align: center ;
+}
+#noxus,#void,#demacia,#ionia,#shurima, img{
+    border: solid #333943;
+    border-radius: 20px;
+    align-items: center;
+}
+#noxus img{
+    width: 400px;
+    height: 350px;
+}
+#demacia img{
+    width: 400px;
+    height: 350px;
+}
+#ionia img{
+    width: 400px;
+    height: 350px;
+}
+#shurima img{
+    width: 400px;
+    height: 350px;
+}
+#void img{
+    width: 400px;
+    height: 350px;
+}
+h2{
+    text-align: left;
+    margin-left: 5px;
+}
+.history{
+    border: solid 2px white;
+    border-radius: 5px;
 }
 
+.buttonsBuy{
+    display: flex;
+    justify-content: space-between;
+    width: 150px;
+    margin-left: 85%;
+}
+
+.addCart{
+    border: solid 2px #00557F;
+    border-radius: 5px;
+    color: #AADCDD;
+}
+.buy{
+    border: solid 2px #00557F;
+    border-radius: 5px;
+    color: #AADCDD;
+}
+.addCart:hover,.buy:hover{
+    background-color:#00557F ;
+}
 
 
 @keyframes slide{
