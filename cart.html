@@ -4,15 +4,26 @@
         html{
             scroll-behavior: smooth;
             }
+            #header2{
+                position: absolute;
+                display: flex;
+                height: 60px;
+                background-color: rgb(46, 45, 45);
+                border-bottom: solid 3px rgb(41, 49, 128);
+                justify-content: space-between;
+                align-items: center;
+                width: 100%;
+                z-index: 100%;
+            }
     </style>
     <title>League Store</title>
     <head>
         <link href="style.css" rel="stylesheet">
     </head>
     <body>
-        <header id="header">
+        <header id="header2">
             <div id="logo">
-                <a href="#fade">
+                <a href="javascript:main()">
                     <img src="img/logo.png" alt="logo"/>
                 </a>
             </div>
@@ -21,20 +32,52 @@
                 <div id="login-button"><a href="login.html">Login</a></div>
 
                     <div id = "cart">
-                        <a href="cart.html">
+                        <a href="">
                             <img src ="img/cart.png" alt="cart">
                      </a>
                     </div>
             </nav>
         </header>
-
-        <div id = "products">
-            
-
+        <div id="container">
+            <div id = "products">
+                <h1>Items</h1>
+                <div class="description" id="riven">
+                    <img src="campeoes/riven.png">  
+                    <p class="textD">&ensp;&ensp;Aqui seria uma descrição breve,com o preço.</p>
+                    <div class="btremove" id="remRiv"><a href="javascript:remRiv()" >Remove x</a></div>
+                </div>
+                <div class="description" id="vayne" >
+                    <img src="campeoes/vayne.png">
+                    <p class="textD">&ensp;&ensp;Aqui seria uma descrição breve,com o preço.</p>
+                    <div id="remVay"class="btremove"><a href="javascript:remVay()">Remove x</a></div>
+                </div>
+                <div class="description" id="irelia" >
+                    <img src="campeoes/irelia.png">
+                    <p class="textD">&ensp;&ensp;Aqui seria uma descrição breve,com o preço.</p>
+                    <div id="remIre"class="btremove"><a href="javascript:remIre()">Remove x</a></div>
+                </div>
+                <div class="description" id="rengar">
+                    <img src="campeoes/rengar.png">
+                    <p class="textD">&ensp;&ensp;Aqui seria uma descrição breve,com o preço.</p>
+                    <div id="remReng"class="btremove"><a href="javascript:remReng()">Remove x</a></div>
+                </div>
+                <div class="description" id="kha" >
+                    <img src="campeoes/kha.png">
+                    <p class="textD">&ensp;&ensp;Aqui seria uma descrição breve,com o preço.</p> 
+                    <div id="remKha"class="btremove"><a href="javascript:remKha()">Remove x</a></div>
+                </div>
+            </div>                
+            <div id="checkout">
+                <h1>Checkout</h1>
+                <p id="itens">&ensp;&ensp;&ensp;&ensp;Total Items:USD </p>
+                <p id="price">&ensp;&ensp;&ensp;&ensp;Total Price:USD </p>
+                <br>
+                <br>
+                <br>
+                <div id="checkoutB">Checkout</div>
+            </div>
         </div>
-
-
-
+  
 
         <script>
             window.onhashchange = function(e) {
@@ -46,10 +89,12 @@
                 oldLink && oldLink.classList.remove('selected')
                 newLink && newLink.classList.add('selected')
             }
-
             let logged = window.location.search.substring(1).split(':')
                 if(logged[0] == "logged=true"){
                     document.getElementById("login-button").style.display = "none"
+                }
+                function kha(){
+                    window.location = window.location.search + ":kha"
                 }
                 var i=logged.length
                 var riven = logged.indexOf("riven")
@@ -57,22 +102,71 @@
                 var irelia = logged.indexOf("irelia")
                 var vayne = logged.indexOf("vayne")
                 var kha = logged.indexOf("kha")
-                if(riven != -1){
-                    console.log("riven"+riven)
-                }
-                if(irelia != -1){
-                    console.log("irelia"+irelia)
-                }
-                if(kha!= -1){
-                    console.log("kha"+kha)
-                }
-                if(rengar != -1){
-                    console.log("rengar"+rengar)
-                }
-                if(vayne!= -1){
-                    console.log("vayne"+vayne)
-                }
 
+
+                var priceT = 125.00
+                var totalItens = 5;
+
+                    if(riven == -1){
+                        let Node = document.querySelector("#riven")
+                        Node.parentNode.removeChild(Node)
+                        priceT -=25.00
+                        totalItens -=1;
+                    }
+                    if(irelia == -1){
+                        let Node = document.querySelector("#irelia")
+                        Node.parentNode.removeChild(Node)
+                        priceT -=25.00
+                        totalItens -=1;
+                    }
+                    if(kha == -1){
+                        let Node = document.querySelector("#kha")
+                        Node.parentNode.removeChild(Node)
+                        priceT -=25.00
+                        totalItens -=1;
+                    }
+                    if(rengar == -1){
+                        let Node = document.querySelector("#rengar")
+                        Node.parentNode.removeChild(Node)
+                        priceT -=25.00
+                        totalItens -=1;
+                    }
+                    if(vayne == -1){
+                        let Node = document.querySelector("#vayne")
+                        Node.parentNode.removeChild(Node)
+                        priceT -=25.00
+                        totalItens -=1;
+                    }
+                    let textP = document.createTextNode(priceT)
+                    let price = document.getElementById("price")
+                    price.appendChild(textP)
+
+                    let textI = document.createTextNode(totalItens)
+                    let item = document.getElementById("itens")
+                    item.appendChild(textI)
+
+
+
+                    function main(){
+                        window.location = "main.html"+ window.location.search
+                    }
+
+                    var link = window.location.search
+                    function remRiv(){
+                        window.location = "cart.html"+link.replace(":riven","")
+                    }
+                    function remVay(){
+                        window.location = "cart.html"+link.replace(":vayne","")
+                    }
+                    function remIre(){
+                        window.location = "cart.html"+link.replace(":irelia","")
+                    }
+                    function remReng(){
+                        window.location = "cart.html"+link.replace(":rengar","")
+                    }
+                    function remKha(){
+                        window.location = "cart.html"+link.replace(":kha","")
+                    }
 
         </script>
 
@@ -80,3 +174,4 @@
 
 
 </html>
+
